@@ -36,11 +36,32 @@ window.addEventListener("DOMContentLoaded", function(){
     
 let divHeader = document.querySelectorAll("body header div");
 
-divHeader.addEventListener("click", selectColor);
-{for (let i=0;i<divHeader.length;i++)
-    {console.log(getSelectedColor(i));}
-}
+for (let i=0;i<divHeader.length;i++)
+    {
+    divHeader[i].addEventListener("click", selectColor);
+    console.log(getSelectedColor());
+    }
 
+// CrÃ©ez un event listener qui quand on clique sur une div du main va appliqer la derniÃ¨re couleur cliquÃ©e dans le header comme couleur de fond de la div.
+// Vous pouvez utiliser :
+// let color = getSelectedColor(); 
+
+let divDivMain = document.querySelectorAll("body main div div");
+
+for (let j=0;j<divDivMain.length;j++)
+    {
+        divDivMain[j].addEventListener("click",function() 
+        {
+           let color = getSelectedColor;
+           
+           if (color && divDivMain[j]==="")
+            {
+                divDivMain[j].style.backgroundColor = color;
+            }
+        })
+    }
     // le code de l'étape 3 se passe ici
+
+
 
 });
